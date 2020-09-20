@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
@@ -6,8 +7,10 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div className="header">
-      <img className="header__logo" src="logo.png" alt="Amazon logo" />
+    <nav className="header">
+      <Link to="/">
+        <img className="header__logo" src="logo.png" alt="Amazon logo" />
+      </Link>
 
       <div className="header__search">
         <input className="header__searchInput" type="text" />
@@ -15,24 +18,32 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        <div className="header__navItem">
-          <div className="header__navItemTextSm">Hello</div>
-          <div className="header__navItemTextLg">Sign In</div>
-        </div>
-        <div className="header__navItem">
-          <div className="header__navItemTextSm">Returns</div>
-          <div className="header__navItemTextLg">& Orders</div>
-        </div>
-        <div className="header__navItem">
-          <div className="header__navItemTextSm">Your</div>
-          <div className="header__navItemTextLg">Prime</div>
-        </div>
-        <div className="header__navItemBasket">
-          <ShoppingBasketIcon />
-          <span className="header__navItemTextLg header__basketCount">0</span>
-        </div>
+        <Link to="/login" className="header__link">
+          <div className="header__navItem">
+            <span className="header__navItemTextSm">Hello</span>
+            <span className="header__navItemTextLg">Sign In</span>
+          </div>
+        </Link>
+        <Link to="/" className="header__link">
+          <div className="header__navItem">
+            <span className="header__navItemTextSm">Returns</span>
+            <span className="header__navItemTextLg">& Orders</span>
+          </div>
+        </Link>
+        <Link to="/" className="header__link">
+          <div className="header__navItem">
+            <span className="header__navItemTextSm">Your</span>
+            <span className="header__navItemTextLg">Prime</span>
+          </div>
+        </Link>
+        <Link to="/checkout">
+          <div className="header__navItemBasket">
+            <ShoppingBasketIcon />
+            <span className="header__navItemTextLg header__basketCount">0</span>
+          </div>
+        </Link>
       </div>
-    </div>
+    </nav>
   );
 }
 

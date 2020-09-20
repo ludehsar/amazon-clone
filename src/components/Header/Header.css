@@ -1,5 +1,6 @@
 .header {
   height: 60px;
+  min-width: 600px;
   display: flex;
   align-items: center;
   background-color: #131921;
@@ -38,6 +39,11 @@
 .header__nav {
   display: flex;
   justify-content: space-evenly;
+}
+
+.header__link {
+  color: #fff;
+  text-decoration: none;
 }
 
 .header__navItem {
